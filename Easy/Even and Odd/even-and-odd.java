@@ -61,48 +61,25 @@ class GFG {
 //User function Template for Java
 
 class Solution {
-
     static void reArrange(int[] arr, int N) {
-
-        int i =0; int  j =1; 
-
-        while(N>j && N>i){
-
-            if(arr[i]%2!=0 && arr[j]%2==0){
-
-                int tem = arr[i];
-
-                arr[i] = arr[j];
-
-                arr[j]=tem;
-
-                i=i+2;
-
-                j=j+2; 
-
+        // code here
+        int [] array = new int[N];
+        int indexEven = 0;
+        int indexOdd = 1;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]%2==0){
+                array[indexEven] = arr[i];
+                indexEven +=2;
             }
-
-            else if(arr[i]%2!=0 && arr[j]!=0){
-
-               j=j+2;
-
+        }
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]%2!=0){
+                array[indexOdd] = arr[i];
+                indexOdd +=2;
             }
-
-           else if(arr[i]%2==0 && arr[j]%2==0){
-
-               i=i+2;
-
-           }
-
-           else{
-
-               i=i+2;
-
-               j=j+2;
-
-           }
-
-           }
-
+        }
+        for(int i=0;i<array.length;i++){
+            arr[i] = array[i];
+        }
     }
-}
+};
